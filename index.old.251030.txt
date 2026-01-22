@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head> 
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Elly's Home</title>
+	</head>
+
+	<body>
+		Hello World! This is Elly's Home.
+
+		<h1>Elly's search</h1>
+		<form action="https://google.com/search" method="GET">
+			<input name="q" type="text" />
+			<button>Search by Google</button>
+			<button>Lucky</button>
+		</form>
+
+
+		<h1>Elly's StarCraft</h1>
+
+		<img id="cloaking" src="img/cloaking.png" alt="클로킹 버튼" />
+  		<img id="wraith" src="img/wraith.png" alt="레이스" />
+  	
+
+		<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
+		<script>
+      		$("#cloaking").click(function() {
+          	$("#wraith").toggle("slow");
+      		});
+
+		</script>
+
+		<h1>Elly's BOOK  Search API연습</h1>
+
+		<script>
+		$.ajax({
+		method: "GET",
+		url: "https://dapi.kakao.com/v3/search/book?target=title&query=클론 코딩",
+		headers: {Authorization: "KakaoAK 604446ee2f8771dbf451e49ac3a61aaa"}
+		})
+		.done(function(data) {
+		console.log(data);
+		});
+		</script>
+
+	</body>
+</html>
